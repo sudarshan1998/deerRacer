@@ -7,9 +7,9 @@
 function setup() {
   createCanvas(600, 350).position(870,120);
   score = 100;
- socket = io.connect('http://localhost:3000');
+//  socket = io.connect('http://localhost:3000');
  background("gray");
- socket.on('mouse',newDrawing);
+//  socket.on('mouse',newDrawing);
 
 }
 
@@ -25,30 +25,24 @@ function draw(){
 function keyPressed() {
    
   console.log('sending'+score);
-  data = {
-    x:score,
-  }
-  socket.emit('mouse',data);
-  textSize(26);
-  textAlign(RIGHT);
-  text('you',50,30);
+//   data = {
+//     x:score,
+//   }
+//   socket.emit('mouse',data);
   let c = color('#0f0');
   fill(c);
   ellipse(score,35,35,35);
   
   
 }
-function newDrawing(data){
-  console.log(data);
-  console.log('data.x is '+ data.x);
-  textSize(26);
-  textAlign(RIGHT);
-  text('Other',70,100);
-  fill(255,0,30);
-  ellipse(data.x,90,35,35);
-  console.log(wordInput.value);  
+// function newDrawing(data){
+//   console.log(data);
+//   console.log('data.x is '+ data.x);
+//   fill(255,0,30);
+//   ellipse(data.x,90,35,35);
+//   console.log(wordInput.value);  
   
-}
+// }
 
 function gameOver(e){
   if(score === 420){
@@ -60,7 +54,7 @@ function gameOver(e){
   console.log(timediff);
   
   let typeSpeed = timediff/1000;
-  wps = (130/20)*typeSpeed;
+  wps = (130/10)*typeSpeed;
   wpss = Math.round(wps);
   alert(" congratulations you completed the game");
   typeSpeedDisplay.innerHTML = wpss +" words per second";

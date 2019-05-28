@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>test_micro</title>
+  <script
+			  src="https://code.jquery.com/jquery-3.4.0.js"
+			  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+			  crossorigin="anonymous"></script>
+
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+  <script src="libraries/p5.sound.js"></script>
+ 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  
+  
+	<style>
+    body{
+      background-color:  	#E8E8E8;
+    }
+    #nav{
+      background-color:#D3D3D3;
+      padding-left: 40%;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 105px;
+    }
+    #deerRacer{
+      font-size:40%;
+    }
+    #main-texts{
+    
+      margin-left: 120px;
+      width: 700px;
+      margin-top: 20px;
+      height:65%;
+    }
+    #texts{
+      margin-left: 30%;
+      
+    }
+    h2{
+     
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+    #word-input{
+      width: 400px;
+
+    }
+    #message{
+      padding-left: 20%;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+    #instructions{
+      
+      width:500px;
+      margin-left: 10%;
+      margin-top: 7%;
+     
+      font-size: 20px;
+    }
+    #font{
+      font-family:  "Comic Sans MS", cursive, sans-serif;
+    }
+	</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" id = "nav" >
+        <a class="navbar-brand" href="index.html" id = "deerRacer">DeerRacer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+        </div>
+      </nav>
+  
+
+    <!-- Word & Input -->
+     <!-- <span  id="seconds"></span> Seconds:</p> -->
+     <div>
+       <div id = "main-texts">
+          <!-- <p>TimeTaken:
+              <span id="time">0</span>
+          </p> -->
+          <p>Typing Speed:
+            <span id = "typeSpeed"></span>
+          </p>
+          
+          <div id = "texts">
+        <h2  id="current-word" ></h2>
+        <input type="text"  placeholder="Start typing..." id="word-input" autofocus>
+        <br><br>
+        <h4  id="message"></h4>
+          </div>
+
+        <!-- Time & Score Columns -->
+          </div>
+          </div>
+       
+
+        <!-- Instructions -->
+        
+        <div id = "instructions">    
+              <h2>Instructions</h5>
+              <p id = "font">You color code is always green and your opponent colour code is red.You should complete
+                the game to see your result. The text will automatically pop up after you typed the correct word.
+                Have fun and enjoy the game!!!!
+              </p>
+         </div>
+
+         
+ 
+</body>
+</html>
+<script src="practice_sketch.js"></script>
+<script src="practice_main.js"></script>
+
+<script>
+  $(document).ready(function(){
+  if(gameOver()){
+   $('#myModal').modal('show');
+}else{
+  console.log("bad");
+}
+});
+</script>

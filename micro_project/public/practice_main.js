@@ -1,7 +1,7 @@
 window.addEventListener('load', init);
-var socket;
-socket = io.connect('http://localhost:3000');
-socket.on('index',newWords);
+// var socket;
+// socket = io.connect('http://localhost:3000');
+// socket.on('index',newWords);
 // Globals
 
 // Available Levels
@@ -28,7 +28,6 @@ const timeDisplay = document.querySelector('#time');
 const typeSpeedDisplay = document.querySelector('#typeSpeed');
 // const resultDisplay = document.querySelector('#result');
 const message = document.querySelector('#message');
-// const playerDisplay = document.querySelector('#player');
 
 // const seconds = document.querySelector('#seconds');
 
@@ -112,10 +111,10 @@ function showWord(words) {
   // Generate random array index
   const randIndex = Math.floor(Math.random() * words.length);
   // Output random word
-  dataIndex = {
-      index : randIndex,
-  }
-  socket.emit('index',dataIndex);
+//   dataIndex = {
+//       index : randIndex,
+//   }
+//   socket.emit('index',dataIndex);
   currentWord.innerHTML = words[randIndex];
   
 }
